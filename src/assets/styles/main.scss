@@ -1,6 +1,14 @@
 @import 'common/variables';
 
 @font-face {
+  font-family: 'Roboto-Thin';
+  font-weight: normal;
+  src: url("../fonts/Roboto/Roboto-Thin.ttf");
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
   font-family: 'Roboto-Light';
   font-weight: normal;
   src: url("../fonts/Roboto/Roboto-Light.ttf");
