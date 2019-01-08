@@ -32,6 +32,16 @@
   font-display: fallback;
 }
 
+.emoji-mart-emoji {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+strong {
+  font-family: Roboto-Bold, sans-serif;
+  font-weight: normal;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -1,7 +1,8 @@
-/* eslint-disable no-undef */
+/* global document */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'sanitize.css';
+import 'normalize.css';
+import './assets/fonts/fontawesome/css/all.min.css';
 import './assets/styles/index.scss';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
