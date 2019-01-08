@@ -16,7 +16,7 @@ const About = styled.div`
   padding-bottom: 170px;
 `;
 
-const Caption = styled.h2`
+const Heading = styled.h2`
   position: relative;
   max-width: 720px;
   color: #0B1C4C;
@@ -55,9 +55,9 @@ const Paragraph = styled.p`
 const AboutMe = () => (
   <Wrapper>
     <About>
-      <Caption>
+      <Heading>
         {'Mobile first web development with HTML, CSS, JavaScript and React.'}
-      </Caption>
+      </Heading>
       <Paragraph>
         {'My name is Kamil Kruczek. I\'m a freelance frontend web developer based in Poland and I\'d like to help you build your next project.'}
       </Paragraph>
