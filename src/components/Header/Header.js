@@ -27,7 +27,7 @@ const Link = styled.a`
   &:after {
     content: '';
     position: absolute;
-    height: 3px;
+    height: 2px;
     background: transparent;
     bottom: -10px;
     left: 0;
@@ -45,6 +45,7 @@ const NavItem = styled.li`
       color: #235EFF;
       
       &:after {
+        background: #235EFF;
         background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#4997FF), to(#235EFF));
         background-image: -webkit-linear-gradient(left, #4997FF, #235EFF);
         background-image: -moz-linear-gradient(left, #4997FF, #235EFF);
@@ -56,6 +57,7 @@ const NavItem = styled.li`
 `;
 
 const Button = styled.button`
+  background: #235EFF;
   background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#4997FF), to(#235EFF));
   background-image: -webkit-linear-gradient(left, #4997FF, #235EFF);
   background-image: -moz-linear-gradient(left, #4997FF, #235EFF);
