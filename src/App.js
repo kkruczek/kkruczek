@@ -4,6 +4,7 @@ import './App.scss';
 import Header from './components/Header/Header';
 import AboutMe from './components/AboutMe/AboutMe';
 import HireMe from './components/HireMe/HireMe';
+import MySkills from './components/MySkills/MySkills';
 
 const App = () => (
   <div className="App">
@@ -11,6 +12,7 @@ const App = () => (
     <Header/>
     <AboutMe/>
     <HireMe/>
+    <MySkills/>
   </div>
 );
 
