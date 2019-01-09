@@ -5,6 +5,7 @@ import Header from './components/Header/Header';
 import AboutMe from './components/AboutMe/AboutMe';
 import HireMe from './components/HireMe/HireMe';
 import MySkills from './components/MySkills/MySkills';
+import GetInTouch from './components/GetInTouch/GetInTouch';
 
 const App = () => (
   <div className="App">
@@ -13,6 +14,7 @@ const App = () => (
     <AboutMe/>
     <HireMe/>
     <MySkills/>
+    <GetInTouch/>
   </div>
 );
 
