@@ -55,9 +55,9 @@ const SkillContent = styled.div`
   padding: 30px;
   background: ${props => (props.transparent ? 'transparent' : '#FFFFFF')};
   text-align: ${props => (props.centered ? 'center' : 'left')};
-    box-shadow: ${props => (props.transparent ? 'none' : '0 3px 8px 0 rgba(35,94,255,0.1)')};
+  box-shadow: ${props => (props.transparent ? 'none' : '0 3px 8px 0 rgba(35,94,255,0.1)')};
   border-radius: 3px;
-  position: relative;
+  position: relative;    
   height: 158px;
   
   ${withGradientLine}

@@ -28,7 +28,7 @@ const CanIHelp = () => (
 
 const DailyBasis = () => (
   <PageChatMessage>
-    {'On daily basis I\'m a '}<strong>Frontend Developer</strong>{', working with React, JavaScript, HTML5 and CSS3.'}
+    {'On daily basis I\'m '}<strong>Frontend Developer</strong>{', working with React, JavaScript, HTML5 and CSS3.'}
   </PageChatMessage>
 );
 
@@ -40,16 +40,33 @@ const PresentationHome = () => (
 
 const PresentationExperience = () => (
   <PageChatMessage>
-    {'I\'m '}
+    {'As you know, I\'m '}
     <strong>Frontend Developer</strong>
-    {` with at least of ${new Date().getFullYear() - 2016}
+    {` with at least of ${new Date().getFullYear() - 2015}
     years of experience at sectors knowledge like IT, banking and law.`}
+  </PageChatMessage>
+);
+
+const PresentationTechnologiesAndTools = () => (
+  <PageChatMessage>
+    {'At this time, some tools that I used and responsibilities:'}
+    <ul>
+      <li>creating/editing views in React,</li>
+      <li>managing states with Redux,</li>
+      <li>connecting to Google Analytics,</li>
+      <li>define styles for UI using SASS preprocessor and styled components,</li>
+      <li>bundling JavaScript files using webpack,</li>
+      <li>BitBucket,</li>
+      <li>Confluence,</li>
+      <li>Jira,</li>
+      <li>and many, many more!</li>
+    </ul>
   </PageChatMessage>
 );
 
 const PresentationFindMe = () => (
   <PageChatMessage>
-    {'You can find me at '}
+    {'For more informations, you can find me at '}
     <a href="https://www.linkedin.com/in/kamil-kruczek" target="_blank" rel="noopener noreferrer">
       LinkedIn
     </a>
@@ -69,24 +86,19 @@ const Contact = () => (
 
 const AboutProjectsSourceCode = () => (
   <PageChatMessage>
-    {'Commercial projects have it that the source code, unfortunately, I can not share (NDA), and you know - the most is happening in them.'}
+    {'Commercial projects have it that the source code, unfortunately, we can not share, and you know - the most is happening in them.'}
   </PageChatMessage>
 );
 
 const AboutProjectsProgrammingStyle = () => (
   <PageChatMessage>
-    {'Feel free to browse the code available on '}
-    <a href="http://github.com/kkruczek" target="_blank" rel="noopener noreferrer">
-      GitHub
-    </a>
-    {'. '}
-    {'It will allow you to look at the programming style a bit.'}
+    {'I will send you a packed file with an example of application. It will allow you to look at the programming style a bit.'}
   </PageChatMessage>
 );
 
 const AboutProjects = () => (
   <PageChatMessage>
-    {'Please send me a message to an email '}<strong>kamil.kruczek@o2.pl</strong>{' if you have any questions or suggestions!'}
+    {'Please send me a message to an email '}<strong>kamil.kruczek@o2.pl</strong>{' and I will contact you as soon as possible!'}
   </PageChatMessage>
 );
 
@@ -194,7 +206,7 @@ const chatSteps = [
     id: 'optionPresentation',
     component: <OptionPresentation/>,
     asMessage: false,
-    delay: 700,
+    delay: 1000,
     trigger: 'presentationHome'
   },
   {
@@ -202,21 +214,28 @@ const chatSteps = [
     component: <PresentationHome/>,
     trigger: 'presentationExperience',
     asMessage: true,
-    delay: 600
+    delay: 1000
   },
   {
     id: 'presentationExperience',
     component: <PresentationExperience/>,
     trigger: 'presentationFindMe',
     asMessage: true,
-    delay: 1000
+    delay: 2000
+  },
+  {
+    id: 'presentationTechnologiesAndTools',
+    component: <PresentationTechnologiesAndTools/>,
+    trigger: 'presentationFindMe',
+    asMessage: true,
+    delay: 2000
   },
   {
     id: 'presentationFindMe',
     component: <PresentationFindMe/>,
     trigger: 'options',
     asMessage: true,
-    delay: 1000
+    delay: 2000
   },
   {
     id: 'optionContact',
@@ -250,7 +269,7 @@ const chatSteps = [
     id: 'aboutProjectsProgrammingStyle',
     component: <AboutProjectsProgrammingStyle/>,
     asMessage: true,
-    delay: 1300,
+    delay: 2300,
     trigger: 'projects'
   },
   {
@@ -258,13 +277,13 @@ const chatSteps = [
     component: <AboutProjects/>,
     trigger: 'options',
     asMessage: true,
-    delay: 1000
+    delay: 2000
   },
   {
     id: 'optionExit',
     component: <OptionExit/>,
     asMessage: false,
-    delay: 500,
+    delay: 1000,
     trigger: 'exit'
   },
   {
