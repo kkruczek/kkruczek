@@ -120,6 +120,10 @@ const TableCell = styled.td`
   font-weight: 500;
   opacity: ${props => (props.smallText ? '0.4' : '1')};
   padding: 5px 40px 5px 0;
+  
+  @media (max-width: 425px) {
+    display: ${props => props.hideOnMobile && 'none'};
+  }
 `;
 
 const FindMeTitle = styled.p`
@@ -166,16 +170,12 @@ const GetInTouch = () => (
             <TableBody>
               <TableRow>
                 <TableCell smallText>name</TableCell>
-                <TableCell smallText>surname</TableCell>
+                <TableCell smallText hideOnMobile>surname</TableCell>
                 <TableCell smallText>email</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>
-                  {'Kamil'}
-                </TableCell>
-                <TableCell>
-                  {'Kruczek'}
-                </TableCell>
+                <TableCell>{'Kamil'}</TableCell>
+                <TableCell hideOnMobile>{'Kruczek'}</TableCell>
                 <TableCell>
                   <Link
                     href="mailto:hello@kkruczek.com"
