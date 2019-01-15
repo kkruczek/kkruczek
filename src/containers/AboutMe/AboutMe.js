@@ -20,6 +20,10 @@ const About = styled.div`
     margin: 0;
     padding: 0 16px 170px 16px;
   }
+  
+  @media (max-width: 768px) {
+    padding: 0 16px 40px 16px;
+  }
 `;
 
 const Heading = styled.h2`
@@ -46,6 +50,17 @@ const Heading = styled.h2`
     background-image: -moz-linear-gradient(left, #4997FF, #235EFF);
     background-image: -o-linear-gradient(left, #4997FF, #235EFF);
     box-shadow: 0 3px 8px 0 rgba(35,94,255,0.1);
+    
+    @media (max-width: 768px) {
+      bottom: -13px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 21px;
+    font-family: Roboto-Regular, sans-serif;
+    line-height: 31px;
+    margin-top: -46px;
   }
 `;
 
@@ -56,6 +71,10 @@ const Paragraph = styled.p`
   font-size: 16px;
   line-height: 24px;
   opacity: 0.6;
+  
+  @media (max-width: 768px) {
+    margin-top: 5px;
+  }
 `;
 
 const AboutMe = () => (

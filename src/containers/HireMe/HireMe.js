@@ -9,6 +9,10 @@ const Wrapper = styled.section`
   @media (max-width: 1024px) {
     padding: 62px 16px;
   }
+  
+  @media (max-width: 768px) {
+    padding: 40px 16px;
+  }
 `;
 
 const Heading = styled.h2`
@@ -18,6 +22,12 @@ const Heading = styled.h2`
   font-weight: 500;
   text-align: center;
   margin: 10px 0 20px 0;
+  line-height: 54px;
+  
+  @media (max-width: 768px) {
+    font-size: 21px;
+    line-height: 31px;
+  }
 `;
 
 const Paragraph = styled.p`

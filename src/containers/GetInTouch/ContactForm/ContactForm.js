@@ -27,6 +27,10 @@ const InputGroup = styled.div`
   display: table;
   width: 100%;
   margin-bottom: 25px;
+  
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
 `;
 
 const Button = styled.button`
@@ -48,8 +52,15 @@ const Button = styled.button`
   
   float: right;
   
+  transition: opacity 0.2s ease;
+  
   &:hover {
     text-decoration: ${props => (props.disabled ? 'none' : 'underline')};
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 48px;
   }
 `;
 

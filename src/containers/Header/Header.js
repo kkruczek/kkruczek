@@ -11,12 +11,17 @@ const Wrapper = styled.header`
     margin: 0 0 200px 0;
     padding: 0 16px;
   }
+  
+  @media (max-width: 768px) {
+    margin: 0 0 100px 0;
+  }
 `;
 
 const Navigation = styled.nav``;
 
 const List = styled.ul`
   margin: 0;
+  padding: 0;
   float: right;
 `;
 
@@ -39,6 +44,10 @@ const Link = styled.a`
     left: 0;
     right: 0;
     border-radius: 3px;
+  }
+  
+  @media (max-width: 768px) {
+    margin: 25px 15px;
   }
 `;
 
@@ -81,6 +90,11 @@ const Button = styled.button`
   
   &:hover {
     text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    margin-left: 10px;
+    padding: 10px 8px;
   }
 `;
 

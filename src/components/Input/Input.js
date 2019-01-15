@@ -21,7 +21,8 @@ const StyledInput = styled.input`
   font-size: 16px;
   font-family: Roboto-Regular, sans-serif;
   color: #333C48;
-  padding: 21px 16px;
+  padding: 0 16px;
+  height: 64px;
   border: ${props => (props.errorMessage ? '1px solid #DC291E' : '1px solid rgba(51, 60, 72, 0.2)')};
   border-radius: 5px;
   background: rgba(249, 249, 250, 0.2);
@@ -50,6 +51,10 @@ const StyledInput = styled.input`
   }
   &:-moz-placeholder { /* Firefox 18- */
     color: rgba(51, 60, 72, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    height: 48px;
   }
 `;
 

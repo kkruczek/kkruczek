@@ -7,6 +7,10 @@ import ContactForm from './ContactForm/ContactForm';
 const Wrapper = styled.section`
   background: #FFFFFF;
   padding: 30px 0 50px 0;
+  
+  @media (max-width: 768px) {
+    padding: 30px 0;
+  }
 `;
 
 const Heading = styled.h2`
@@ -15,6 +19,16 @@ const Heading = styled.h2`
   font-size: 36px;
   font-weight: 500;
   text-align: center;
+  margin: 15px 0;
+  
+  @media (max-width: 1024px) {
+    padding: 0 16px;
+  }
+  
+  @media (max-width: 768px) {
+    font-size: 21px;
+    line-height: 31px;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -26,6 +40,10 @@ const Paragraph = styled.p`
   line-height: 24px;
   opacity: 0.6;
   margin: 0 auto;
+  
+  @media (max-width: 1024px) {
+    padding: 0 16px;
+  }
 `;
 
 const ContactContainer = styled.div`
@@ -36,6 +54,10 @@ const ContactContainer = styled.div`
     clear: both;
     content: "";
     display: block;
+  }
+  
+  @media (max-width: 768px) {
+    margin-top: 30px;
   }
 `;
 
@@ -53,6 +75,8 @@ const ContactInfoContainer = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     float: none;
+    margin-top: 30px;
+    margin-bottom: 25px;
   }
 `;
 
@@ -67,6 +91,10 @@ const ContactInfo = styled.div`
     max-width: 100%;
     float: none;
     padding: 60px 16px;
+  }
+  
+  @media (max-width: 768px) {
+    padding: 30px 16px;
   }
 `;
 

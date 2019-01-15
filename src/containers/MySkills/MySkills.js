@@ -18,9 +18,15 @@ const Heading = styled.h2`
   font-size: 36px;
   font-weight: 500;
   text-align: center;
+  margin: 15px 0;
   
   @media(max-width: 1024px) {
     padding: 0 16px;
+  }
+  
+  @media(max-width: 768px) {
+    font-size: 21px;
+    line-height: 31px;
   }
 `;
 
@@ -42,12 +48,15 @@ const Paragraph = styled.p`
 const SkillsContainer = styled.div`
   margin-left: -20px;
   margin-right: -20px;
+  margin-top: 10px;
   
   @media (max-width: 1024px) {
     padding-left: 8px;
     padding-right: 8px;
-    
-    margin: 0;
+
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 20px;
   }
   
   &:after {
@@ -83,7 +92,12 @@ const SkillContent = styled.div`
   position: relative;    
   height: 158px;
   
-  ${withGradientLine}
+  ${withGradientLine};
+  
+  @media (max-width: 768px) {
+    padding: 30px 16px;
+    height: auto;
+  }
 `;
 
 const SkillWrapper = styled.div`
@@ -98,7 +112,7 @@ const SkillWrapper = styled.div`
   }
   
   @media (max-width: 768px) {
-    width: 50%;
+    width: ${props => (props.mobileStretched ? '100%' : '50%')};
   }
 `;
 
@@ -138,6 +152,11 @@ const Button = styled.button`
   
   &:hover {
     text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    margin: 15px auto 0 auto;
+    display: block;
   }
 `;
 
@@ -228,7 +247,7 @@ const MySkills = () => (
           </SkillDescription>
         </SkillContent>
       </SkillWrapper>
-      <SkillWrapper>
+      <SkillWrapper mobileStretched>
         <SkillContent transparent centered withoutBottomLine>
           <SkillTitle>
             {'You are not sure about technology?'}
