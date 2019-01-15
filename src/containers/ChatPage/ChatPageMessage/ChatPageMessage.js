@@ -14,7 +14,7 @@ const styles = css`
 
 const StyledSpan = styled.span`${styles}`;
 
-const PageChatMessage = ({
+const ChatPageMessage = ({
   children,
   ...restProps
 }) => (
@@ -25,9 +25,9 @@ const PageChatMessage = ({
   </StyledSpan>
 );
 
-PageChatMessage.propTypes = {
+ChatPageMessage.propTypes = {
   /** Content for the message */
   children: PropTypes.node
 };
 
-export default PageChatMessage;
+export default ChatPageMessage;

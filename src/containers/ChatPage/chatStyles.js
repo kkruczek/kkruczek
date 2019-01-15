@@ -1,27 +1,62 @@
 import { css } from 'styled-components';
 
 const chatStyles = css`
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+  &.fade-enter {
+    opacity: 0.01;
+  }
+
+  &.fade-enter-active {
+    opacity: 1;
+  }
+  
+  &.fade-exit-active {
+    opacity: 0.01;
+  }
+
   .rsc-container {
     width: 430px;
     height: auto;
-    margin: 30px auto 30px auto;
+    //margin: 30px auto 30px auto;
     box-shadow: none;
     border-radius: 0;
     background: #F1FAFF;
     transition: margin 0.3s ease, padding 0.3s ease;
+    
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: 0 auto;
+    padding: 30px 0;
   
-    @media(max-width: 568px) {
+    @media (max-width: 568px) {
       width: 100%;
+      padding: 0;
+      
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      top: 0 !important;
+      
       margin: 0 auto;
+      //margin: 0;
     }
   }
   
   .rsc-content {
-    overflow-y: hidden;
-    height: auto;
+    //overflow-y: hidden;
+    //height: auto;
+    //height: calc(100% - 20px);
+    height: 100%;
+    overflow: auto;
+    padding-right: 18px;
+    width: 100%;
     
     @media(max-width: 568px) {
-      padding: 32px 4px;
+      padding: 32px 18px 32px 4px;
     }
   }
   

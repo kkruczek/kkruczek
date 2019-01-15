@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { Emoji } from 'emoji-mart';
-import PageChatMessage from './PageChatMessage/PageChatMessage';
+import ChatPageMessage from './ChatPageMessage/ChatPageMessage';
 
 let options = [
   { value: 'presentation', label: 'Tell me a bit about you!', trigger: 'optionPresentation' },
@@ -13,60 +13,43 @@ let options = [
 ];
 
 const Greetings = () => (
-  <PageChatMessage>
+  <ChatPageMessage>
     {'Hey, I\'m Kamil!'}{' '}
     <Emoji set="messenger" emoji=":muscle:" size={24}/>
-  </PageChatMessage>
+  </ChatPageMessage>
 );
 
 const CanIHelp = () => (
-  <PageChatMessage>
+  <ChatPageMessage>
     {'How can I help you?'}{' '}
     <Emoji set="facebook" emoji=":thinking_face:" size={24}/>
-  </PageChatMessage>
+  </ChatPageMessage>
 );
 
 const DailyBasis = () => (
-  <PageChatMessage>
-    {'On daily basis I\'m '}<strong>Frontend Developer</strong>{', working with React, JavaScript, HTML5 and CSS3.'}
-  </PageChatMessage>
+  <ChatPageMessage>
+    {'On daily basis I\'m a '}<strong>Frontend Developer</strong>{', working with React, JavaScript, HTML5 and CSS3.'}
+  </ChatPageMessage>
 );
 
 const PresentationHome = () => (
-  <PageChatMessage>
+  <ChatPageMessage>
     {'My name is '}<strong>Kamil Kruczek</strong>{', I am from Poland and I live in Rzeszów.'}
-  </PageChatMessage>
+  </ChatPageMessage>
 );
 
 const PresentationExperience = () => (
-  <PageChatMessage>
-    {'As you know, I\'m '}
+  <ChatPageMessage>
+    {'I\'m '}
     <strong>Frontend Developer</strong>
-    {` with at least of ${new Date().getFullYear() - 2015}
+    {` with at least of ${new Date().getFullYear() - 2016}
     years of experience at sectors knowledge like IT, banking and law.`}
-  </PageChatMessage>
-);
-
-const PresentationTechnologiesAndTools = () => (
-  <PageChatMessage>
-    {'At this time, some tools that I used and responsibilities:'}
-    <ul>
-      <li>creating/editing views in React,</li>
-      <li>managing states with Redux,</li>
-      <li>connecting to Google Analytics,</li>
-      <li>define styles for UI using SASS preprocessor and styled components,</li>
-      <li>bundling JavaScript files using webpack,</li>
-      <li>BitBucket,</li>
-      <li>Confluence,</li>
-      <li>Jira,</li>
-      <li>and many, many more!</li>
-    </ul>
-  </PageChatMessage>
+  </ChatPageMessage>
 );
 
 const PresentationFindMe = () => (
-  <PageChatMessage>
-    {'For more informations, you can find me at '}
+  <ChatPageMessage>
+    {'You can find me at '}
     <a href="https://www.linkedin.com/in/kamil-kruczek" target="_blank" rel="noopener noreferrer">
       LinkedIn
     </a>
@@ -74,32 +57,37 @@ const PresentationFindMe = () => (
     <a href="http://github.com/kkruczek" target="_blank" rel="noopener noreferrer">
       GitHub
     </a>{'.'}
-  </PageChatMessage>
+  </ChatPageMessage>
 );
 
 const Contact = () => (
-  <PageChatMessage>
+  <ChatPageMessage>
     {'Feel free to contact me via email '}<strong>kamil.kruczek@o2.pl</strong>
     {', I will respond as soon as possible!'}
-  </PageChatMessage>
+  </ChatPageMessage>
 );
 
 const AboutProjectsSourceCode = () => (
-  <PageChatMessage>
-    {'Commercial projects have it that the source code, unfortunately, we can not share, and you know - the most is happening in them.'}
-  </PageChatMessage>
+  <ChatPageMessage>
+    {'Commercial projects have it that the source code, unfortunately, I can not share (NDA), and you know - the most is happening in them.'}
+  </ChatPageMessage>
 );
 
 const AboutProjectsProgrammingStyle = () => (
-  <PageChatMessage>
-    {'I will send you a packed file with an example of application. It will allow you to look at the programming style a bit.'}
-  </PageChatMessage>
+  <ChatPageMessage>
+    {'Feel free to browse the code available on '}
+    <a href="http://github.com/kkruczek" target="_blank" rel="noopener noreferrer">
+      GitHub
+    </a>
+    {'. '}
+    {'It will allow you to look at the programming style a bit.'}
+  </ChatPageMessage>
 );
 
 const AboutProjects = () => (
-  <PageChatMessage>
-    {'Please send me a message to an email '}<strong>kamil.kruczek@o2.pl</strong>{' and I will contact you as soon as possible!'}
-  </PageChatMessage>
+  <ChatPageMessage>
+    {'Please send me a message to an email '}<strong>kamil.kruczek@o2.pl</strong>{' if you have any questions or suggestions!'}
+  </ChatPageMessage>
 );
 
 const Options = props => (
@@ -221,21 +209,14 @@ const chatSteps = [
     component: <PresentationExperience/>,
     trigger: 'presentationFindMe',
     asMessage: true,
-    delay: 2000
-  },
-  {
-    id: 'presentationTechnologiesAndTools',
-    component: <PresentationTechnologiesAndTools/>,
-    trigger: 'presentationFindMe',
-    asMessage: true,
-    delay: 2000
+    delay: 1000
   },
   {
     id: 'presentationFindMe',
     component: <PresentationFindMe/>,
     trigger: 'options',
     asMessage: true,
-    delay: 2000
+    delay: 1000
   },
   {
     id: 'optionContact',
@@ -256,7 +237,7 @@ const chatSteps = [
     component: <OptionProjects/>,
     asMessage: false,
     delay: 1000,
-    trigger: 'aboutProjectsSourceCode'
+    trigger: 'aboutProjectsProgrammingStyle'
   },
   {
     id: 'aboutProjectsSourceCode',
@@ -269,7 +250,7 @@ const chatSteps = [
     id: 'aboutProjectsProgrammingStyle',
     component: <AboutProjectsProgrammingStyle/>,
     asMessage: true,
-    delay: 2300,
+    delay: 1000,
     trigger: 'projects'
   },
   {
@@ -277,7 +258,7 @@ const chatSteps = [
     component: <AboutProjects/>,
     trigger: 'options',
     asMessage: true,
-    delay: 2000
+    delay: 1000
   },
   {
     id: 'optionExit',

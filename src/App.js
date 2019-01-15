@@ -1,23 +1,30 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import './App.scss';
-// import PageChat from './components/PageChat/PageChat';
-import Header from './containers/Header/Header';
-import AboutMe from './containers/AboutMe/AboutMe';
-import HireMe from './containers/HireMe/HireMe';
-import MySkills from './containers/MySkills/MySkills';
-import GetInTouch from './containers/GetInTouch/GetInTouch';
-import Footer from './containers/Footer/Footer';
+import ChatPage from './containers/ChatPage/ChatPage';
+import HomePage from './containers/HomePage/HomePage';
+import { AppContext, AppProvider } from './context/AppProvider';
 
 const App = () => (
-  <div className="App">
-    {/* <PageChat/> */}
-    <Header/>
-    <AboutMe/>
-    <HireMe/>
-    <MySkills/>
-    <GetInTouch/>
-    <Footer/>
-  </div>
+  <AppProvider>
+    <AppContext.Consumer>
+      {context => (
+        <React.Fragment>
+          {
+            !context.showMainPage && !context.showLoader && (
+              <ChatPage/>
+            )
+          }
+          {
+            context.showMainPage && !context.showLoader && (
+              <HomePage/>
+            )
+          }
+        </React.Fragment>
+      )
+      }
+    </AppContext.Consumer>
+  </AppProvider>
 );
 
 export default App;
