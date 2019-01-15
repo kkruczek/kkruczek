@@ -6,6 +6,7 @@ import AboutMe from './containers/AboutMe/AboutMe';
 import HireMe from './containers/HireMe/HireMe';
 import MySkills from './containers/MySkills/MySkills';
 import GetInTouch from './containers/GetInTouch/GetInTouch';
+import Footer from './containers/Footer/Footer';
 
 const App = () => (
   <div className="App">
@@ -15,6 +16,7 @@ const App = () => (
     <HireMe/>
     <MySkills/>
     <GetInTouch/>
+    <Footer/>
   </div>
 );
 
