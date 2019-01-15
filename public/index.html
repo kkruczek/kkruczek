@@ -24,11 +24,60 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>Kamil Kruczek | Frontend Developer</title>
+    <style media="screen" type="text/css">
+      body {
+        margin: 0;
+      }
+
+      noscript {
+        font-size: 14px;
+        font-family: sans-serif;
+      }
+
+      .spinnerContainer {
+        align-items: center;
+        background-color: #F1FAFF;
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        width: 100vw;
+        flex-direction: column;
+      }
+
+      .loading {
+        -webkit-animation: scale-out 1.0s infinite ease-in-out;
+        animation: scale-out 1.0s infinite ease-in-out;
+        background: #235EFF;
+        background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#4997FF), to(#235EFF));
+        background-image: -webkit-linear-gradient(left, #4997FF, #235EFF);
+        background-image: -moz-linear-gradient(left, #4997FF, #235EFF);
+        background-image: -o-linear-gradient(left, #4997FF, #235EFF);
+        border-radius: 25px;
+        height: 50px;
+        width: 50px;
+        margin-bottom: 30px;
+      }
+
+      @keyframes scale-out {
+        0% {
+          -webkit-transform: scale(0);
+          transform: scale(0);
+        }
+        100% {
+          -webkit-transform: scale(1.0);
+          opacity: 0;
+          transform: scale(1.0);
+        }
+      }
+    </style>
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
+    <div id="spinner" class="spinnerContainer">
+      <div class="loading"></div>
+      <noscript>
+        You need to enable JavaScript to run this app.
+      </noscript>
+    </div>
     <div id="root"></div>
     <!--
       This HTML file is a template.
