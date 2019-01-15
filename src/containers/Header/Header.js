@@ -5,6 +5,12 @@ const Wrapper = styled.header`
   max-width: 980px;
   margin: 0 auto 200px auto;
   overflow: hidden;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    margin: 0 0 200px 0;
+    padding: 0 16px;
+  }
 `;
 
 const Navigation = styled.nav``;
@@ -87,9 +93,6 @@ const Header = () => (
         </NavItem>
         <NavItem>
           <Link>Skills</Link>
-        </NavItem>
-        <NavItem>
-          <Link>Testimonials</Link>
         </NavItem>
         <NavItem>
           <Button>Get in touch</Button>

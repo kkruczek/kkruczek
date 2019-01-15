@@ -43,18 +43,31 @@ const ContactInfoContainer = styled.div`
   float: left;
   width: 50%;
   border-radius: 0 3px 3px 0;
+  box-sizing: border-box;
   margin: 55px 0;
   
   background: #235EFF;
   background: linear-gradient(135deg, #4997FF 0%, #235EFF 100%);
   box-shadow: 0 3px 8px 0 rgba(35,94,255,0.2);
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    float: none;
+  }
 `;
 
 const ContactInfo = styled.div`
+  box-sizing: border-box;
   max-width: 490px;
   width: 100%;
   padding: 60px 0;
   float: right;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    float: none;
+    padding: 60px 16px;
+  }
 `;
 
 const Avatar = styled.img`
@@ -101,6 +114,12 @@ const Link = styled.a`
 const ContactFormContainer = styled.div`
   float: left;
   width: 50%;
+  box-sizing: border-box;
+  
+  @media (max-width: 768px) {
+    float: none;
+    width: 100%;
+  }
 `;
 
 const GetInTouch = () => (

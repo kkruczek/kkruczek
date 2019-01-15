@@ -5,6 +5,10 @@ const Wrapper = styled.section`
   background: linear-gradient(135deg, #4997FF 0%, #235EFF 100%);
   box-shadow: 0 3px 8px 0 rgba(35,94,255,0.1);
   padding: 62px 0;
+  
+  @media (max-width: 1024px) {
+    padding: 62px 16px;
+  }
 `;
 
 const Heading = styled.h2`

@@ -14,6 +14,12 @@ const About = styled.div`
   flex-direction: column;
   
   padding-bottom: 170px;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    margin: 0;
+    padding: 0 16px 170px 16px;
+  }
 `;
 
 const Heading = styled.h2`

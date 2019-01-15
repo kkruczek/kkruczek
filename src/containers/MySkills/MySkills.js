@@ -5,6 +5,11 @@ const Wrapper = styled.section`
   max-width: 980px;
   margin: 0 auto;
   padding: 30px 0 50px 0;
+  
+  @media(max-width: 1024px) {
+    max-width: 100%;
+    margin: 0;
+  }
 `;
 
 const Heading = styled.h2`
@@ -13,6 +18,10 @@ const Heading = styled.h2`
   font-size: 36px;
   font-weight: 500;
   text-align: center;
+  
+  @media(max-width: 1024px) {
+    padding: 0 16px;
+  }
 `;
 
 const Paragraph = styled.p`
@@ -24,9 +33,23 @@ const Paragraph = styled.p`
   line-height: 24px;
   opacity: 0.6;
   margin: 0 auto;
+  
+  @media(max-width: 1024px) {
+    padding: 0 16px;
+  }
 `;
 
 const SkillsContainer = styled.div`
+  margin-left: -20px;
+  margin-right: -20px;
+  
+  @media (max-width: 1024px) {
+    padding-left: 8px;
+    padding-right: 8px;
+    
+    margin: 0;
+  }
+  
   &:after {
     clear: both;
     content: "";
@@ -64,24 +87,18 @@ const SkillContent = styled.div`
 `;
 
 const SkillWrapper = styled.div`
-  padding: 20px;
   float: left;
-  width: 215px;
+  width: 25%;
+  box-sizing: border-box;
+  padding: 20px;
   
-  &:nth-child(4n+1) {
-    padding: 20px 20px 20px 0;
+  @media (max-width: 1024px) {
+    width: 33.333333%;
+    padding: 8px;
   }
-
-  &:nth-child(4n+2) {
-    padding: 20px;
-  }
-
-  &:nth-child(4n+3) {
-    padding: 20px;
-  }
-
-  &:nth-child(4n+4) {
-    padding: 20px 0 20px 20px;
+  
+  @media (max-width: 768px) {
+    width: 50%;
   }
 `;
 

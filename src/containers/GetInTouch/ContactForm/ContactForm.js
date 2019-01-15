@@ -5,10 +5,22 @@ import Input from '../../../components/Input/Input';
 import Textarea from '../../../components/Textarea/Textarea';
 
 const StyledContactForm = styled.div`
-  max-width: 410px;
+  box-sizing: border-box;
+  max-width: 490px;
   width: 100%;
   float: left;
   padding-left: 80px;
+  
+  @media (max-width: 1024px) {
+    max-width: 100%;
+    float: none;
+    padding-left: 40px;
+    padding-right: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    padding-left: 16px;
+  }
 `;
 
 const InputGroup = styled.div`
