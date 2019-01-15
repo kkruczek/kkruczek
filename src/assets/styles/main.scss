@@ -1,16 +1,8 @@
 @import 'common/variables';
 
 @font-face {
-  font-family: 'Roboto-Thin';
-  font-weight: normal;
-  src: url("../fonts/Roboto/Roboto-Thin.ttf");
-  font-style: normal;
-  font-display: fallback;
-}
-
-@font-face {
   font-family: 'Roboto-Light';
-  font-weight: normal;
+  font-weight: 300;
   src: url("../fonts/Roboto/Roboto-Light.ttf");
   font-style: normal;
   font-display: fallback;
@@ -18,7 +10,7 @@
 
 @font-face {
   font-family: 'Roboto-Regular';
-  font-weight: normal;
+  font-weight: 400;
   src: url("../fonts/Roboto/Roboto-Regular.ttf");
   font-style: normal;
   font-display: fallback;
@@ -26,7 +18,7 @@
 
 @font-face {
   font-family: 'Roboto-Medium';
-  font-weight: normal;
+  font-weight: 500;
   src: url("../fonts/Roboto/Roboto-Medium.ttf");
   font-style: normal;
   font-display: fallback;
@@ -34,7 +26,7 @@
 
 @font-face {
   font-family: 'Roboto-Bold';
-  font-weight: normal;
+  font-weight: 700;
   src: url("../fonts/Roboto/Roboto-Bold.ttf");
   font-style: normal;
   font-display: fallback;
