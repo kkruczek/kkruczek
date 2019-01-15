@@ -47,6 +47,7 @@
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.4.2",
     "react-simple-chatbot": "^0.3.7",
+    "react-transition-group": "^2.4.0",
     "resolve": "1.6.0",
     "sanitize.css": "^7.0.1",
     "sass-loader": "^7.1.0",
