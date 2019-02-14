@@ -22,7 +22,7 @@ const reactRules = {
     afterOpening: "never"
   }],
   "jsx-a11y/href-no-hash": "off",
-  "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }]
+  "jsx-a11y/anchor-is-valid": ["warn", {"aspects": ["invalidHref"]}]
 };
 
 module.exports = {
@@ -36,6 +36,11 @@ module.exports = {
       "modules": true,
       "jsx": true
     }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true
   },
   "rules": Object.assign({},
     baseRules,
