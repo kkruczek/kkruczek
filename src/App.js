@@ -3,7 +3,7 @@ import React from 'react';
 import './App.scss';
 import ChatPage from './containers/ChatPage/ChatPage';
 import HomePage from './containers/HomePage/HomePage';
-import { AppContext, AppProvider } from './context/AppProvider';
+import AppProvider, { AppContext } from './context/AppProvider';
 
 const App = () => (
   <AppProvider>

@@ -1,23 +1,38 @@
 /* eslint-disable */
 import React from 'react';
+import withStorage from "../hoc/withStorage";
 
 export const AppContext = React.createContext();
 
-export class AppProvider extends React.Component {
-  constructor() {
-    super();
+class AppProviderComponent extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.checkAppSettings = this.checkAppSettings.bind(this);
 
     this.setShowLoader = this.setShowLoader.bind(this);
     this.setShowMainPage = this.setShowMainPage.bind(this);
 
+    this.checkAppSettings();
+
     this.state = {
       showLoader: false,
       setShowLoader: this.setShowLoader,
-      showMainPage: false,
+      showMainPage: !JSON.parse(this.props.load('appConfig')).chatbotEnabled,
       setShowMainPage: this.setShowMainPage
     };
 
     this.spinner = document.getElementById('spinner');
+  }
+
+  checkAppSettings() {
+    try {
+      if (JSON.parse(this.props.load('appConfig')).chatbotEnabled) {
+        this.props.save('appConfig', JSON.stringify({ chatbotEnabled: true }));
+      }
+    } catch (e) {
+      this.props.save('appConfig', JSON.stringify({ chatbotEnabled: true }));
+    }
   }
 
   setShowLoader(showLoader) {
@@ -47,3 +62,7 @@ export class AppProvider extends React.Component {
     );
   }
 }
+
+const AppProvider = withStorage(AppProviderComponent);
+
+export default AppProvider;
