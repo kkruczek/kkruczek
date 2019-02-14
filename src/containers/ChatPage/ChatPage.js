@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
@@ -6,10 +7,11 @@ import avatar from '../../assets/images/kkr.jpg';
 import chatSteps from './chatSteps';
 import chatStyles from './chatStyles';
 import { AppContext } from '../../context/AppProvider';
+import withStorage from '../../hoc/withStorage';
 
 const StyledChat = styled(ChatBot)`${chatStyles}`;
 
-class ChatPage extends React.Component {
+class ChatPageComponent extends React.Component {
   constructor() {
     super();
 
@@ -36,7 +38,7 @@ class ChatPage extends React.Component {
               handleEnd={() => {
                 setTimeout(() => {
                   this.setState({ componentActiveToFade: false });
-
+                  this.props.save('appConfig', JSON.stringify({ chatbotEnabled: false }));
                   setTimeout(() => {
                     setShowMainPage(true, 1500);
                   }, 300);
@@ -46,7 +48,6 @@ class ChatPage extends React.Component {
               hideSubmitButton
               footerStyle={{ display: 'none' }}
               inputStyle={{ display: 'none' }}
-              floatingStyle={{ backgroundColor: 'red' }}
             />
           </CSSTransition>
         )}
@@ -54,5 +55,7 @@ class ChatPage extends React.Component {
     );
   }
 }
+
+const ChatPage = withStorage(ChatPageComponent);
 
 export default ChatPage;
