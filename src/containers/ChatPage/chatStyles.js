@@ -41,7 +41,7 @@ const chatStyles = css`
       bottom: 0 !important;
       top: 0 !important;
       
-      margin: 0 auto 30px 0;
+      margin: 0 auto;
       //margin: 0;
     }
   }
@@ -56,12 +56,16 @@ const chatStyles = css`
     width: 100%;
     
     @media(max-width: 568px) {
-      padding: 32px 18px 32px 4px;
+      padding: 32px 18px 32px 0;
     }
   }
   
   .rsc-ts {
     margin-bottom: 10px;
+    
+    &:last-child {
+      margin-bottom: 50px;
+    }
   }
   
   .rsc-cs {
@@ -69,8 +73,8 @@ const chatStyles = css`
     box-shadow: none;
     text-align: right;
     display: block;
-    padding: 10px 5px;
     margin: 0;
+    padding: 10px 16px;
     
     .rsc-loading {
       background: #FFFFFF;
@@ -119,7 +123,7 @@ const chatStyles = css`
     padding: 9px 25px;
     font-size: 14px;
     font-family: Roboto-Regular, sans-serif;
-    text-align: right;
+    text-align: right; 
   }
   
   .rsc-loading {
@@ -170,6 +174,8 @@ const chatStyles = css`
     
     &.exit {
       margin-top: 15px;
+      margin-bottom: 50px;
+      padding-right: 0;
       
       &:after {
         content: '\\f35a';
@@ -186,11 +192,7 @@ const chatStyles = css`
   .rsc-os-options {
     margin: 2px 0 12px;
     text-align: right;
-    padding: 0 6px;
-    
-    @media(max-width: 568px) {
-      padding: 0 12px;
-    }
+    padding: 0;
   }
   
   a {
