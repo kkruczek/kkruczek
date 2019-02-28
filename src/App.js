@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React from 'react';
 import './App.scss';
 import ChatPage from './containers/ChatPage/ChatPage';
