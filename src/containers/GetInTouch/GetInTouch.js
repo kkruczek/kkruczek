@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from 'react';
 import styled from 'styled-components';
 import avatarImage from '../../assets/images/kkr.jpg';
@@ -174,8 +173,8 @@ const GetInTouch = () => (
                 <TableCell smallText>email</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell>{'Kamil'}</TableCell>
-                <TableCell hideOnMobile>{'Kruczek'}</TableCell>
+                <TableCell>Kamil</TableCell>
+                <TableCell hideOnMobile>Kruczek</TableCell>
                 <TableCell>
                   <Link
                     href="mailto:hello@kkruczek.com"
