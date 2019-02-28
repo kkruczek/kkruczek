@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import desktopLogo from '../../assets/images/kk-desktop.svg';
+import mobileLogo from '../../assets/images/kk-mobile.svg';
 
 const Wrapper = styled.header`
   max-width: 980px;
@@ -47,7 +49,7 @@ const Link = styled.a`
   }
   
   @media (max-width: 768px) {
-    margin: 25px 15px;
+    margin: 28px 15px;
   }
 `;
 
@@ -98,9 +100,41 @@ const Button = styled.button`
   }
 `;
 
+const HomeLink = styled.a`
+  padding-top: 10px;
+`;
+
+const LogoMobile = styled.img`
+  width: 40px;
+  height: 40px;
+  display: none;
+  
+  @media (max-width: 568px) {
+    display: inline;
+    margin-top: 15px;
+  }
+`;
+
+const LogoDesktop = styled.img`
+  width: 52px;
+  height: 52px;
+  display: inline;
+  margin-top: 10px;
+  
+  @media (max-width: 568px) {
+    display: none;
+  }
+`;
+
 const Header = () => (
   <Wrapper>
     <Navigation>
+      <HomeLink href="/">
+        <LogoMobile src={mobileLogo}/>
+      </HomeLink>
+      <HomeLink href="/">
+        <LogoDesktop src={desktopLogo}/>
+      </HomeLink>
       <List>
         <NavItem>
           <Link>About me</Link>
