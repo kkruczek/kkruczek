@@ -182,8 +182,6 @@ class ContactForm extends React.Component {
   }
 
   submitForm(model) {
-    // TODO: call to API here, after 200 response request - clear form
-    console.log(model);
     this.setState({ canSubmit: false, sendingForm: true });
     setTimeout(() => fetch(`${API_URL}/sendMessage`, {
       headers: {
@@ -201,17 +199,18 @@ class ContactForm extends React.Component {
         );
         this.resetForm();
       } else {
+        this.setState({ canSubmit: true });
         this.addNotification(
           'Something went wrong',
-          'Your message can not be sent right now. Please try again later.',
+          'Your message can not be send right now. Please try again later.',
           'error'
         );
       }
     }).catch(() => {
-      this.setState({ sendingForm: false });
+      this.setState({ canSubmit: true, sendingForm: false });
       this.addNotification(
         'Something went wrong',
-        'Your message can not be sent right now. Please try again later.',
+        'Your message can not be send right now. Please try again later.',
         'error'
       );
     }), 1000);
