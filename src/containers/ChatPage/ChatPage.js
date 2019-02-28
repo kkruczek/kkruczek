@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { CSSTransition } from 'react-transition-group';
 import ChatBot from 'react-simple-chatbot';
@@ -55,6 +55,14 @@ class ChatPageComponent extends React.Component {
     );
   }
 }
+
+ChatPageComponent.propTypes = {
+  save: PropTypes.func
+};
+
+ChatPageComponent.defaultProps = {
+  save() {}
+};
 
 const ChatPage = withStorage(ChatPageComponent);
 
