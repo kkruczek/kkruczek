@@ -84,6 +84,7 @@ const chatStyles = css`
       text-align: right;
       display: inline-block;
       border-radius: 18px 18px 0 18px;
+      margin-bottom: 50px;
     }
   }
   
