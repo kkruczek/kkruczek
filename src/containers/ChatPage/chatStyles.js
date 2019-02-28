@@ -41,7 +41,7 @@ const chatStyles = css`
       bottom: 0 !important;
       top: 0 !important;
       
-      margin: 0 auto;
+      margin: 0 auto 30px 0;
       //margin: 0;
     }
   }
