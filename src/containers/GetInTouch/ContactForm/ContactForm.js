@@ -6,6 +6,8 @@ import Input from '../../../components/Input/Input';
 import Textarea from '../../../components/Textarea/Textarea';
 import Loader from '../../../components/Loader/Loader';
 
+const API_URL = 'http://strapi.kkruczek.com';
+
 const StyledContactForm = styled.div`
   box-sizing: border-box;
   max-width: 490px;
@@ -183,20 +185,36 @@ class ContactForm extends React.Component {
     // TODO: call to API here, after 200 response request - clear form
     console.log(model);
     this.setState({ canSubmit: false, sendingForm: true });
-    setTimeout(() => {
-      this.resetForm();
+    setTimeout(() => fetch(`${API_URL}/sendMessage`, {
+      headers: {
+        'Content-Type': 'application/json; charset=utf-8'
+      },
+      method: 'POST',
+      body: JSON.stringify(model)
+    }).then((response) => {
+      this.setState({ sendingForm: false });
+      if (response.ok) {
+        this.addNotification(
+          'Message successfully sent',
+          'Thank you, I will respond as soon as possible.',
+          'success'
+        );
+        this.resetForm();
+      } else {
+        this.addNotification(
+          'Something went wrong',
+          'Your message can not be sent right now. Please try again later.',
+          'error'
+        );
+      }
+    }).catch(() => {
       this.setState({ sendingForm: false });
       this.addNotification(
-        'Message successfully sent',
-        'Thank you, I will respond as soon as possible.',
-        'success'
+        'Something went wrong',
+        'Your message can not be sent right now. Please try again later.',
+        'error'
       );
-      // this.addNotification(
-      //   'Something went wrong',
-      //   'Your message can not be sent right now. Please try again later.',
-      //   'error'
-      // );
-    }, 1000);
+    }), 1000);
   }
 
   resetForm() {
