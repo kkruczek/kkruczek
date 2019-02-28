@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { Emoji } from 'emoji-mart';
 import ChatPageMessage from './ChatPageMessage/ChatPageMessage';
