@@ -1,8 +1,10 @@
 import Formsy from 'formsy-react';
 import React from 'react';
 import styled from 'styled-components';
+import NotificationSystem from 'react-notification-system';
 import Input from '../../../components/Input/Input';
 import Textarea from '../../../components/Textarea/Textarea';
+import Loader from '../../../components/Loader/Loader';
 
 const StyledContactForm = styled.div`
   box-sizing: border-box;
@@ -10,6 +12,7 @@ const StyledContactForm = styled.div`
   width: 100%;
   float: left;
   padding-left: 80px;
+  position: relative;
   
   @media (max-width: 1024px) {
     max-width: 100%;
@@ -64,6 +67,84 @@ const Button = styled.button`
   }
 `;
 
+export const notificationStyles = {
+  Containers: {
+    DefaultStyle: {
+      padding: '5px 20px 20px 0'
+    }
+  },
+
+  NotificationItem: {
+    DefaultStyle: {
+      padding: '16px',
+      height: 'auto',
+      WebkitBorderRadius: '3px',
+      MozBorderRadius: '3px',
+      borderRadius: '3px',
+      WebkitBoxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.16)',
+      MozBoxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.16)',
+      boxShadow: '0px 2px 4px 0px rgba(0, 0, 0, 0.16)',
+      backgroundColor: '#FFFFFF',
+      borderTopWidth: '3px'
+    },
+
+    success: {
+      color: '#65AD3D',
+      borderTopColor: '#65AD3D'
+    },
+
+    error: {
+      color: '#C02425',
+      borderTopColor: '#C02425'
+    }
+  },
+
+  Title: {
+    DefaultStyle: {
+      fontSize: '12px',
+      fontFamily: 'Roboto-Medium, sans-serif',
+      fontWeight: 500,
+      margin: '0 0 10px 0',
+      padding: 0
+    },
+
+    success: {
+      color: '#65AD3D'
+    },
+
+    error: {
+      color: '#C02425'
+    }
+  },
+
+  MessageWrapper: {
+    DefaultStyle: {
+      fontSize: '16px',
+      fontFamily: 'Roboto-Light, sans-serif',
+      fontWeight: 300,
+      color: 'rgba(51, 60, 72, 0.7)',
+      lineHeight: '21px'
+    }
+  },
+
+  Dismiss: {
+    DefaultStyle: {
+      top: '14px',
+      right: '10px'
+    },
+
+    success: {
+      color: '#FFFFFF',
+      backgroundColor: '#65AD3D'
+    },
+
+    error: {
+      color: '#FFFFFF',
+      backgroundColor: '#C02425'
+    }
+  }
+};
+
 class ContactForm extends React.Component {
   constructor(props) {
     super(props);
@@ -72,10 +153,12 @@ class ContactForm extends React.Component {
     this.enableButton = this.enableButton.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.resetForm = this.resetForm.bind(this);
+    this.addNotification = this.addNotification.bind(this);
 
     this.formRef = React.createRef();
+    this.notificationSystemRef = React.createRef();
 
-    this.state = { canSubmit: false };
+    this.state = { canSubmit: false, sendingForm: false };
   }
 
   disableButton() {
@@ -86,12 +169,34 @@ class ContactForm extends React.Component {
     this.setState({ canSubmit: true });
   }
 
+  addNotification(title, message, level) {
+    this.notificationSystemRef.current.addNotification({
+      title,
+      message,
+      level,
+      autoDismiss: 5,
+      position: 'tr'
+    });
+  }
+
   submitForm(model) {
     // TODO: call to API here, after 200 response request - clear form
     console.log(model);
+    this.setState({ canSubmit: false, sendingForm: true });
     setTimeout(() => {
       this.resetForm();
-    }, 2000);
+      this.setState({ sendingForm: false });
+      this.addNotification(
+        'Message successfully sent',
+        'Thank you, I will respond as soon as possible.',
+        'success'
+      );
+      // this.addNotification(
+      //   'Something went wrong',
+      //   'Your message can not be sent right now. Please try again later.',
+      //   'error'
+      // );
+    }, 1000);
   }
 
   resetForm() {
@@ -158,9 +263,16 @@ class ContactForm extends React.Component {
             type="submit"
             disabled={!this.state.canSubmit}
           >
-            {'Send message'}
+            {`${this.state.sendingForm ? 'Sending message...' : 'Send message'}`}
           </Button>
+          {
+            this.state.sendingForm && <Loader/>
+          }
         </Formsy>
+        <NotificationSystem
+          ref={this.notificationSystemRef}
+          style={notificationStyles}
+        />
       </StyledContactForm>
     );
   }
