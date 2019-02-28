@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withFormsy } from 'formsy-react';
 import styled from 'styled-components';
 
@@ -116,5 +116,21 @@ class Input extends React.Component {
     );
   }
 }
+
+Input.propTypes = {
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  placeholder: PropTypes.string,
+  setValue: PropTypes.func,
+  getValue: PropTypes.func,
+  getErrorMessage: PropTypes.func
+};
+
+Input.defaultProps = {
+  placeholder: '',
+  setValue() {},
+  getValue() {},
+  getErrorMessage() {}
+};
 
 export default withFormsy(Input);
