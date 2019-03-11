@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import desktopLogo from '../../assets/images/kk-desktop.svg';
 import mobileLogo from '../../assets/images/kk-mobile.svg';
+import StyledButton from '../../components/Button/Button';
 
 const Wrapper = styled.header`
   max-width: 980px;
@@ -73,27 +74,7 @@ const NavItem = styled.li`
   }
 `;
 
-const Button = styled.button`
-  background: #235EFF;
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#4997FF), to(#235EFF));
-  background-image: -webkit-linear-gradient(left, #4997FF, #235EFF);
-  background-image: -moz-linear-gradient(left, #4997FF, #235EFF);
-  background-image: -o-linear-gradient(left, #4997FF, #235EFF);
-  box-shadow: 0 3px 8px 0 rgba(35,94,255,0.2);
-  
-  cursor: pointer;
-  color: #FFFFFF;
-  font-family: Roboto-Medium, sans-serif;
-  font-size: 14px;
-  padding: 10px 20px;
-  margin-left: 35px;
-  border: none;
-  border-radius: 3px;
-  
-  &:hover {
-    text-decoration: underline;
-  }
-  
+const Button = styled(StyledButton)`
   @media (max-width: 768px) {
     margin-left: 10px;
     padding: 10px 8px;

@@ -5,6 +5,7 @@ import NotificationSystem from 'react-notification-system';
 import Input from '../../../components/Input/Input';
 import Textarea from '../../../components/Textarea/Textarea';
 import Loader from '../../../components/Loader/Loader';
+import StyledButton from '../../../components/Button/Button';
 
 const API_URL = 'http://strapi.kkruczek.com';
 
@@ -38,30 +39,8 @@ const InputGroup = styled.div`
   }
 `;
 
-const Button = styled.button`
-  background: #235EFF;
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#4997FF), to(#235EFF));
-  background-image: -webkit-linear-gradient(left, #4997FF, #235EFF);
-  background-image: -moz-linear-gradient(left, #4997FF, #235EFF);
-  background-image: -o-linear-gradient(left, #4997FF, #235EFF);
-  box-shadow: 0 3px 8px 0 rgba(35,94,255,0.2);
-  
-  cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
-  opacity: ${props => (props.disabled ? '0.5' : '1')};
-  color: #FFFFFF;
-  font-family: Roboto-Medium, sans-serif;
-  font-size: 14px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  
+const Button = styled(StyledButton)`  
   float: right;
-  
-  transition: opacity 0.2s ease;
-  
-  &:hover {
-    text-decoration: ${props => (props.disabled ? 'none' : 'underline')};
-  }
   
   @media (max-width: 768px) {
     width: 100%;
